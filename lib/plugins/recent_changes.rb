@@ -25,7 +25,11 @@ module Plugins
       rc.each do |log|
         message = "[#{log[:type].capitalize} #{log[:revid]}] #{log[:title]} " \
                   "(#{log[:user]}) "
-        message << log[:comment].empty? ? 'No comment :(' : "#{log[:comment]}"
+        if log[:comment].empty?
+          message << 'No comment :('
+        else
+          message << log[:comment]
+        end
         message << " (#{log[:diff_length]})"
         message << ' New!' if log[:new]
         message << ' Minor!' if log[:minor]
