@@ -1,0 +1,22 @@
+# This should be named 'config.yml'
+
+irc:
+  server: irc.esper.net
+  port: 6667
+  channels:
+    - "#Channel1"
+    - \#Channel2
+  dev_channels:
+    - "#DevChannel1"
+    - \#DevChannel2
+  user: Username
+  pass: Password
+  real: Hello, my name is rcbot.
+  nicks:
+    - RCBot
+    - RecentChanges
+
+wiki:
+  url: https://ftb.gamepedia.com/api.php
+  user: SuperBot
+  pass: secrets
