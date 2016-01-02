@@ -34,6 +34,7 @@ module Plugins
         message << ' New!' if log[:new]
         message << ' Minor!' if log[:minor]
         message << ' Bot!' if log[:bot]
+        message.prepend('!! ') unless log[:patrolled]
         RecentChangesBot::IRC.channels.each do |channel|
           channel.send(message)
         end
