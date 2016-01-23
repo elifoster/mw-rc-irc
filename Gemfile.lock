@@ -3,15 +3,15 @@ GEM
   specs:
     cinch (2.3.1)
     httpclient (2.7.1)
-    mediawiki-butt (0.10.1)
-      httpclient (>= 2.6.0.1)
+    mediawiki-butt (0.10.2)
+      httpclient (>= 2.7.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   cinch (>= 2.3.1)
-  mediawiki-butt (>= 0.10.1)
+  mediawiki-butt (>= 0.10.2)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
