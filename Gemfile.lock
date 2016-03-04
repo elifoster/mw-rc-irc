@@ -3,7 +3,7 @@ GEM
   specs:
     cinch (2.3.1)
     httpclient (2.7.1)
-    mediawiki-butt (0.10.2)
+    mediawiki-butt (0.11.0)
       httpclient (>= 2.7.1)
 
 PLATFORMS
