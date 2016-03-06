@@ -23,7 +23,7 @@ module Plugins
       time = Time.now.utc
       wiki = RecentChangesBot.init_wiki
       rc = wiki.get_recent_changes(nil, time, @last_time, 5000)
-      watchlist = wiki.get_full_watchlist(nil, 5000)
+      watchlist = wiki.get_full_watchlist(nil, 5000) if Configuration::WATCHLIST
       @last_time = time
       return if rc.size == 0
 
