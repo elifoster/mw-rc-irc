@@ -16,4 +16,5 @@ module Configuration
   WIKI_URL = CONFIG['wiki']['url']
   WIKI_USERNAME = CONFIG['wiki']['user']
   WIKI_PASSWORD = CONFIG['wiki']['pass']
+  WATCHLIST = CONFIG['wiki']['watchlist']
 end

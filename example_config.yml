@@ -20,3 +20,4 @@ wiki:
   url: https://ftb.gamepedia.com/api.php
   user: SuperBot
   pass: secrets
+  watchlist: true

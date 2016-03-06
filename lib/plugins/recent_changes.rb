@@ -1,5 +1,5 @@
 require 'cinch'
-require 'pp'
+require_relative '../configuration'
 
 module Plugins
   class RecentChanges
@@ -16,19 +16,19 @@ module Plugins
     timer(15, method: :execute)
 
     def execute
-      p @last_time
       if @last_time.nil?
         @last_time = Time.now.utc
         return
       end
       time = Time.now.utc
-      p time
       wiki = RecentChangesBot.init_wiki
       rc = wiki.get_recent_changes(nil, time, @last_time, 5000)
+      watchlist = wiki.get_full_watchlist(nil, 5000)
       @last_time = time
       return if rc.size == 0
 
       rc.each do |log|
+        next if !watchlist.include?(log[:title]) || log[:user] == Configuration::WIKI_USERNAME
         message = "[#{log[:type].capitalize} #{log[:revid]}] #{log[:title]} (#{log[:user]}) "
         if log[:comment].empty?
           message << NO_COMMENT
