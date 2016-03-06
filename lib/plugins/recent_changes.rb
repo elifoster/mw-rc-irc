@@ -28,7 +28,8 @@ module Plugins
       return if rc.size == 0
 
       rc.each do |log|
-        next if !watchlist.include?(log[:title]) || log[:user] == Configuration::WIKI_USERNAME
+        next if Configuration::WATCHLIST && !watchlist.include?(log[:title])
+        next if Configuration::WATCHLIST && log[:user] == Configuration::WIKI_USERNAME
         message = "[#{log[:type].capitalize} #{log[:revid]}] #{log[:title]} (#{log[:user]}) "
         if log[:comment].empty?
           message << NO_COMMENT
